@@ -53,6 +53,25 @@ body {
   font-size: 0.98rem;
 }
 
+.intro h2 {
+  color: var(--text);
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+}
+
+.intro p {
+  margin: 0 0 14px;
+}
+
+.intro strong {
+  color: var(--text);
+}
+
+.intro-tagline {
+  color: var(--accent-soft);
+  font-size: 1.05rem;
+}
+
 .current-week {
   margin: 24px 0;
 }
