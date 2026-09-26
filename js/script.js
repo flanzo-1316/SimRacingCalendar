@@ -1,4 +1,4 @@
-const DATA_URL = "data/calendar-2026.json";
+const DATA_URL = "data/calendar.json";
 
 function mondayOf(date) {
   const d = new Date(date);
@@ -53,10 +53,10 @@ function findNextWeek(weeks) {
 
 function cardHTML(week, isCurrent) {
   return `
-    <article class="card" id="round-${week.round}">
+    <article class="card" id="week-${week.sequence}">
       ${isCurrent ? '<span class="badge">Settimana attuale</span>' : ""}
       <div class="card-main">
-        <div class="card-round">Round ${week.round}</div>
+        <div class="card-round">Settimana ${week.sequence} · Round ${week.round} (${week.season})</div>
         <h3 class="card-circuit">${week.circuit}</h3>
         <div class="card-location">${week.location}, ${week.country}</div>
       </div>
@@ -89,11 +89,11 @@ function render(weeks) {
   }
 
   listSection.innerHTML = weeks
-    .map((w) => cardHTML(w, current && w.round === current.round))
+    .map((w) => cardHTML(w, current && w.sequence === current.sequence))
     .join("");
 
   select.innerHTML = weeks
-    .map((w) => `<option value="round-${w.round}">Round ${w.round} — ${w.circuit}</option>`)
+    .map((w) => `<option value="week-${w.sequence}">Settimana ${w.sequence} — ${w.circuit} (${w.season})</option>`)
     .join("");
 
   select.addEventListener("change", () => {

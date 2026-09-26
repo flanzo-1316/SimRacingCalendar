@@ -11,11 +11,11 @@ L'obiettivo è che le varie community di sim racing aderiscano a questo calendar
 
 ## Come funziona
 
-Il sito mostra, settimana per settimana, il circuito assegnato in base al calendario ufficiale F1 2026. La settimana corrente viene evidenziata automaticamente.
+Il sito mostra, settimana per settimana, il circuito assegnato in base al calendario ufficiale F1, dalla prossima gara fino ad agosto 2027 (a cavallo tra stagione 2026 e 2027). La settimana corrente viene evidenziata automaticamente.
 
 ## Aggiornare il calendario
 
-I dati vivono in [`data/calendar-2026.json`](data/calendar-2026.json). Per modificarli:
+I dati vivono in [`data/calendar.json`](data/calendar.json). Per modificarli:
 
 1. Modifica il file JSON (round, nome GP, circuito, località, data di gara).
 2. Fai commit e push: GitHub Pages si aggiorna automaticamente.
