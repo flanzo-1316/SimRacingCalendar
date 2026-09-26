@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimRacing Calendar — Calendario unico circuiti F1</title>
+  <meta name="description" content="Il calendario settimanale unico per tutti i campionati di sim racing F1: ogni settimana lo stesso circuito della gara F1 reale." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>🏁 SimRacing Calendar</h1>
+      <p class="subtitle">Un circuito unico ogni settimana, in sincrono con la Formula 1 reale</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p>
+        Ogni settimana di Gran Premio F1 reale, tutti i campionati di sim racing dovrebbero allenarsi
+        sullo stesso circuito. Così le community di campionati diversi si allenano insieme,
+        e chi corre in più campionati non deve imparare due tracciati nella stessa settimana.
+      </p>
+    </section>
+
+    <section id="current-week" class="current-week"></section>
+
+    <section class="filters">
+      <label for="filter">Vai a un round:</label>
+      <select id="filter"></select>
+    </section>
+
+    <section id="calendar-list" class="calendar-list"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Dati calendario F1 2026 basati sul calendario ufficiale. Progetto aperto alle community sim racing.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

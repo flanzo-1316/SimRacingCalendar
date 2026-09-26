@@ -1,0 +1,28 @@
+{
+  "season": 2026,
+  "weeks": [
+    { "round": 1, "gpName": "Gran Premio d'Australia", "circuit": "Albert Park Circuit", "location": "Melbourne", "country": "Australia", "countryCode": "AU", "raceDate": "2026-03-08" },
+    { "round": 2, "gpName": "Gran Premio della Cina", "circuit": "Shanghai International Circuit", "location": "Shanghai", "country": "Cina", "countryCode": "CN", "raceDate": "2026-03-15" },
+    { "round": 3, "gpName": "Gran Premio del Giappone", "circuit": "Suzuka International Racing Course", "location": "Suzuka", "country": "Giappone", "countryCode": "JP", "raceDate": "2026-03-29" },
+    { "round": 4, "gpName": "Gran Premio di Miami", "circuit": "Miami International Autodrome", "location": "Miami", "country": "USA", "countryCode": "US", "raceDate": "2026-05-03" },
+    { "round": 5, "gpName": "Gran Premio del Canada", "circuit": "Circuit Gilles Villeneuve", "location": "Montreal", "country": "Canada", "countryCode": "CA", "raceDate": "2026-05-24" },
+    { "round": 6, "gpName": "Gran Premio di Monaco", "circuit": "Circuit de Monaco", "location": "Monte Carlo", "country": "Monaco", "countryCode": "MC", "raceDate": "2026-06-07" },
+    { "round": 7, "gpName": "Gran Premio di Spagna (Barcellona)", "circuit": "Circuit de Barcelona-Catalunya", "location": "Barcellona", "country": "Spagna", "countryCode": "ES", "raceDate": "2026-06-14" },
+    { "round": 8, "gpName": "Gran Premio d'Austria", "circuit": "Red Bull Ring", "location": "Spielberg", "country": "Austria", "countryCode": "AT", "raceDate": "2026-06-28" },
+    { "round": 9, "gpName": "Gran Premio di Gran Bretagna", "circuit": "Silverstone Circuit", "location": "Silverstone", "country": "Regno Unito", "countryCode": "GB", "raceDate": "2026-07-05" },
+    { "round": 10, "gpName": "Gran Premio del Belgio", "circuit": "Circuit de Spa-Francorchamps", "location": "Spa", "country": "Belgio", "countryCode": "BE", "raceDate": "2026-07-19" },
+    { "round": 11, "gpName": "Gran Premio d'Ungheria", "circuit": "Hungaroring", "location": "Budapest", "country": "Ungheria", "countryCode": "HU", "raceDate": "2026-07-26" },
+    { "round": 12, "gpName": "Gran Premio d'Olanda", "circuit": "Circuit Zandvoort", "location": "Zandvoort", "country": "Paesi Bassi", "countryCode": "NL", "raceDate": "2026-08-23" },
+    { "round": 13, "gpName": "Gran Premio d'Italia", "circuit": "Autodromo Nazionale di Monza", "location": "Monza", "country": "Italia", "countryCode": "IT", "raceDate": "2026-09-06" },
+    { "round": 14, "gpName": "Gran Premio di Spagna (Madrid)", "circuit": "Madring", "location": "Madrid", "country": "Spagna", "countryCode": "ES", "raceDate": "2026-09-13" },
+    { "round": 15, "gpName": "Gran Premio dell'Azerbaijan", "circuit": "Baku City Circuit", "location": "Baku", "country": "Azerbaijan", "countryCode": "AZ", "raceDate": "2026-09-26" },
+    { "round": 16, "gpName": "Gran Premio della Malesia", "circuit": "Sepang International Circuit", "location": "Sepang", "country": "Malesia", "countryCode": "MY", "raceDate": "2026-10-04" },
+    { "round": 17, "gpName": "Gran Premio di Singapore", "circuit": "Marina Bay Street Circuit", "location": "Singapore", "country": "Singapore", "countryCode": "SG", "raceDate": "2026-10-11" },
+    { "round": 18, "gpName": "Gran Premio degli Stati Uniti", "circuit": "Circuit of The Americas", "location": "Austin", "country": "USA", "countryCode": "US", "raceDate": "2026-10-25" },
+    { "round": 19, "gpName": "Gran Premio del Messico", "circuit": "Autódromo Hermanos Rodríguez", "location": "Città del Messico", "country": "Messico", "countryCode": "MX", "raceDate": "2026-11-01" },
+    { "round": 20, "gpName": "Gran Premio del Brasile", "circuit": "Autódromo José Carlos Pace", "location": "San Paolo", "country": "Brasile", "countryCode": "BR", "raceDate": "2026-11-08" },
+    { "round": 21, "gpName": "Gran Premio di Las Vegas", "circuit": "Las Vegas Strip Circuit", "location": "Las Vegas", "country": "USA", "countryCode": "US", "raceDate": "2026-11-22" },
+    { "round": 22, "gpName": "Gran Premio del Qatar", "circuit": "Lusail International Circuit", "location": "Lusail", "country": "Qatar", "countryCode": "QA", "raceDate": "2026-11-29" },
+    { "round": 23, "gpName": "Gran Premio di Abu Dhabi", "circuit": "Yas Marina Circuit", "location": "Abu Dhabi", "country": "Emirati Arabi Uniti", "countryCode": "AE", "raceDate": "2026-12-06" }
+  ]
+}
