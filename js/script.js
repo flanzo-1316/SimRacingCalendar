@@ -1,20 +1,16 @@
 const DATA_URL = "data/calendar.json";
 
-function mondayOf(date) {
-  const d = new Date(date);
-  const day = d.getDay(); // 0 = Sunday
-  const diff = day === 0 ? -6 : 1 - day;
-  d.setDate(d.getDate() + diff);
-  d.setHours(0, 0, 0, 0);
-  return d;
+const TYPE_LABELS = {
+  f1: "GP F1 reale",
+  unified: "Circuito unificato",
+};
+
+function parseDay(iso) {
+  return new Date(iso + "T00:00:00");
 }
 
-function sundayOf(date) {
-  const monday = mondayOf(date);
-  const sunday = new Date(monday);
-  sunday.setDate(sunday.getDate() + 6);
-  sunday.setHours(23, 59, 59, 999);
-  return sunday;
+function endOfDay(iso) {
+  return new Date(iso + "T23:59:59");
 }
 
 function formatDate(date, opts = {}) {
@@ -33,22 +29,25 @@ function formatRange(start, end) {
 }
 
 function buildWeeks(weeksData) {
-  return weeksData.map((w) => {
-    const raceDate = new Date(w.raceDate + "T12:00:00");
-    const weekStart = mondayOf(raceDate);
-    const weekEnd = sundayOf(raceDate);
-    return { ...w, raceDate, weekStart, weekEnd };
-  });
+  return weeksData.map((w) => ({
+    ...w,
+    weekStartDate: parseDay(w.weekStart),
+    weekEndDate: endOfDay(w.weekEnd),
+  }));
 }
 
 function findCurrentWeek(weeks) {
   const now = new Date();
-  return weeks.find((w) => now >= w.weekStart && now <= w.weekEnd);
+  return weeks.find((w) => now >= w.weekStartDate && now <= w.weekEndDate);
 }
 
 function findNextWeek(weeks) {
   const now = new Date();
-  return weeks.find((w) => w.weekStart > now);
+  return weeks.find((w) => w.weekStartDate > now);
+}
+
+function typeBadge(type) {
+  return `<span class="type-badge type-${type}">${TYPE_LABELS[type] || type}</span>`;
 }
 
 function cardHTML(week, isCurrent) {
@@ -56,13 +55,13 @@ function cardHTML(week, isCurrent) {
     <article class="card" id="week-${week.sequence}">
       ${isCurrent ? '<span class="badge">Settimana attuale</span>' : ""}
       <div class="card-main">
-        <div class="card-round">Settimana ${week.sequence} · Round ${week.round} (${week.season})</div>
+        <div class="card-round">Settimana ${week.sequence}</div>
         <h3 class="card-circuit">${week.circuit}</h3>
-        <div class="card-location">${week.location}, ${week.country}</div>
+        <div class="card-location">${week.country}</div>
       </div>
       <div class="card-dates">
-        <div class="card-week-range">${formatRange(week.weekStart, week.weekEnd)}</div>
-        <div class="card-gp-name">${week.gpName}</div>
+        <div class="card-week-range">${formatRange(week.weekStartDate, week.weekEndDate)}</div>
+        ${typeBadge(week.type)}
       </div>
     </article>
   `;
@@ -81,8 +80,8 @@ function render(weeks) {
     currentSection.innerHTML = `
       <div class="card">
         <div class="card-main">
-          <div class="card-round">Nessun GP questa settimana</div>
-          <h3 class="card-circuit">${next ? "Prossimo: " + next.circuit : "Stagione conclusa"}</h3>
+          <div class="card-round">Nessuna settimana attiva</div>
+          <h3 class="card-circuit">${next ? "Prossimo: " + next.circuit : "Calendario concluso"}</h3>
         </div>
       </div>
     `;
@@ -93,7 +92,7 @@ function render(weeks) {
     .join("");
 
   select.innerHTML = weeks
-    .map((w) => `<option value="week-${w.sequence}">Settimana ${w.sequence} — ${w.circuit} (${w.season})</option>`)
+    .map((w) => `<option value="week-${w.sequence}">Settimana ${w.sequence} — ${w.circuit} (${w.country})</option>`)
     .join("");
 
   select.addEventListener("change", () => {

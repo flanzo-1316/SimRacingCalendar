@@ -153,10 +153,42 @@ body {
   font-size: 0.95rem;
 }
 
-.card-gp-name {
+.type-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+.type-f1 {
+  background: rgba(225, 6, 0, 0.15);
   color: var(--accent-soft);
+  border: 1px solid rgba(225, 6, 0, 0.4);
+}
+
+.type-unified {
+  background: rgba(59, 130, 246, 0.15);
+  color: #7fb2f8;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.legend {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin: 16px 0 8px;
   font-size: 0.85rem;
-  margin-top: 2px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .site-footer {
