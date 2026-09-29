@@ -2,7 +2,8 @@ const DATA_URL = "data/calendar.json";
 
 const TYPE_LABELS = {
   f1: "GP F1 reale",
-  unified: "Circuito unificato",
+  unified: "Unified",
+  community: "Community",
 };
 
 function parseDay(iso) {
@@ -29,16 +30,25 @@ function formatRange(start, end) {
 }
 
 function buildWeeks(weeksData) {
-  return weeksData.map((w) => ({
+  const weeks = weeksData.map((w) => ({
     ...w,
     weekStartDate: parseDay(w.weekStart),
     weekEndDate: endOfDay(w.weekEnd),
   }));
+  // Each entry represents its circuit until the next one starts, even though
+  // the printed date range only spans the race-weekend days within that week.
+  weeks.forEach((w, i) => {
+    const next = weeks[i + 1];
+    w.activeUntil = next
+      ? next.weekStartDate
+      : new Date(w.weekStartDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+  });
+  return weeks;
 }
 
 function findCurrentWeek(weeks) {
   const now = new Date();
-  return weeks.find((w) => now >= w.weekStartDate && now <= w.weekEndDate);
+  return weeks.find((w) => now >= w.weekStartDate && now < w.activeUntil);
 }
 
 function findNextWeek(weeks) {

@@ -194,6 +194,12 @@ body {
   border: 1px solid rgba(59, 130, 246, 0.4);
 }
 
+.type-community {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f5ae3d;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
 .legend {
   display: flex;
   gap: 18px;
